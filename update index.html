@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shivpujan Yadav | Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <style>
+    :root {
+      --primary-color: #4e54c8;
+      --secondary-color: #8f94fb;
+      --bg-color: #ffffff;
+      --text-color: #333333;
+      --card-bg: #f9f9f9;
+    }
+
+    body.dark-mode {
+      --bg-color: #1a1a1a;
+      --text-color: #f0f0f0;
+      --card-bg: #2a2a2a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: all 0.3s ease;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      text-align: center;
+      padding: 2.5rem 1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: var(--card-bg);
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      padding: 14px 20px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: var(--secondary-color);
+      color: white;
+      border-radius: 5px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    section {
+      background: var(--card-bg);
+      padding: 25px;
+      margin-bottom: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      color: var(--primary-color);
+    }
+
+    ul {
+      list-style: none;
+      line-height: 1.8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+      color: white;
+    }
+
+    /* ✅ Animated Social Links */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 25px;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      text-decoration: none;
+      font-size: 30px;
+      transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .social-links a:hover {
+      transform: scale(1.3) rotate(10deg);
+      text-shadow: 0 0 15px var(--secondary-color);
+    }
+
+    .fa-instagram { color: #E4405F; }
+    .fa-tiktok { color: #010101; }
+    .fa-facebook { color: #1877F2; }
+    .fa-envelope { color: #EA4335; }
+    .fa-youtube { color: #FF0000; }
+
+    /* ✅ Subscribe Button */
+    .subscribe-btn {
+      display: inline-block;
+      background-color: #FF0000;
+      color: white;
+      font-weight: 600;
+      padding: 10px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      margin-top: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    .subscribe-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.6); }
+      50% { box-shadow: 0 0 15px 10px rgba(255, 0, 0, 0.2); }
+    }
+
+    /* Gmail text */
+    .gmail-text {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .gmail-text a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .gmail-text a:hover {
+      color: var(--secondary-color);
+      text-decoration: underline;
+    }
+
+    /* Dark mode toggle */
+    .theme-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1.4rem;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease;
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 1.7rem; }
+      nav a { padding: 10px 15px; }
+      .social-links a { font-size: 26px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Shivpujan Yadav</h1>
+    <p>Web & Mobile App Developer</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+    <section id="home">
+      <h2>Home</h2>
+      <p>Welcome! I'm <b>Shivpujan Yadav</b>, a passionate web and mobile app developer dedicated to creating fast, modern, and beautiful digital experiences.</p>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I have experience in web and mobile app development, building user-friendly and responsive designs using the latest technologies. My goal is to turn ideas into powerful digital products that make a difference.</p>
+    </section>
+
+    <section id="services">
+      <h2>My Services</h2>
+      <ul>
+        <li>🌐 Web Development</li>
+        <li>📱 Mobile App Development</li>
+        <li>🎨 UI/UX Design</li>
+        <li>🔧 Website Maintenance</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>Connect with me on social media or email:</p>
+
+      <!-- ✅ Social Media Links -->
+      <div class="social-links">
+        <a href="https://www.instagram.com/urrosim/#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@urrosim" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.facebook.com/share/1J1kZDN1Mj/?mibextid=wwXIfr" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://youtube.com/@urrosim" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="mailto:shivpujangobindyadav@gmail.com" title="Gmail"><i class="fas fa-envelope"></i></a>
+      </div>
+
+      <!-- ✅ Subscribe Button -->
+      <div style="text-align: center;">
+        <a href="https://youtube.com/@urrosim" target="_blank" class="subscribe-btn">
+          🔔 Subscribe on YouTube
+        </a>
+      </div>
+
+      <!-- ✅ Gmail text link -->
+      <div class="gmail-text">
+        <p>Email: <a href="mailto:shivpujangobindyadav@gmail.com">shivpujangobindyadav@gmail.com</a></p>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Shivpujan Yadav | All Rights Reserved</p>
+  </footer>
+
+  <button class="theme-toggle" id="theme-toggle">🌙</button>
+
+  <script>
+    // Dark Mode Toggle
+    const toggleBtn = document.getElementById('theme-toggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>
